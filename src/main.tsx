@@ -1,14 +1,19 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
-
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
 import WebApp from '@twa-dev/sdk'
+import Home from './Home.tsx'
 
-WebApp.ready();
+WebApp.ready()
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+WebApp.expand()
+WebApp.requestFullscreen();
+
+
+
+
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <Home />
+  </StrictMode>,
 )
