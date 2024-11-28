@@ -42,6 +42,6 @@ const AnimatedDrone = ({ position , scale = 1 }: Props) => {
 };
 
 // Preload the model
-useGLTF.preload('/models/drone.glb');
+useGLTF.preload('/droneswar/models/drone.glb');
 
 export default AnimatedDrone;
