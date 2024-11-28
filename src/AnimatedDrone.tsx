@@ -8,7 +8,7 @@ interface Props {
 }
 const AnimatedDrone = ({ position , scale = 1 }: Props) => {
   const group = useRef<THREE.Group | null>(null);
-  const { scene, animations } = useGLTF('/models/drone.glb'); // Your drone model path
+  const { scene, animations } = useGLTF('/droneswar/models/drone.glb'); // Your drone model path
   const { actions, names } = useAnimations(animations, scene);
 
   
