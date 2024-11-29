@@ -92,7 +92,7 @@ const DroneController = (props:Props) => {
 
       rotationChange += rotateSpeed * (props.z * 0.1);
 
-      rotationChange += rotateSpeed * (props.x * 0.1);
+      
   
       // Apply movement relative to drone's rotation
       movement.applyEuler(droneRotation);

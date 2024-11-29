@@ -1,7 +1,7 @@
 import WebApp from "@twa-dev/sdk"
 import App from "./App"
 import { useEffect, useState } from "react";
-
+import Logo from "./assets/dron640x360.png"
 
 const Home = () => {
 
@@ -60,22 +60,11 @@ const Home = () => {
     }
 
     return (
-        <div
-        style={{
-            paddingTop: WebApp?.contentSafeAreaInset.top + 100,
-            paddingLeft: WebApp?.contentSafeAreaInset.left,
-            paddingRight: WebApp?.contentSafeAreaInset.right,
-            paddingBottom: WebApp?.contentSafeAreaInset.bottom,
-        }}
-         >
-            {g && <div>
-                <h1>Gyroscope</h1>
-                <p>X: {g.x}</p>
-                <p>Y: {g.y}</p>
-                <p>Z: {g.z}</p>
-                </div>
-                }
-            <button onClick={() => setIsEnable(true)}>Enable</button>
+        <div style={{display:"flex",flexDirection:"column", minHeight:"100vh", justifyContent:"center", alignItems:"center"}}>
+        <img src={Logo} alt="logo" style={{width:"320px", height:"auto"}}
+        
+        />
+        <h2>Loading...</h2>
         </div>
     )
 }

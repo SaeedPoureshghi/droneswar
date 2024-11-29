@@ -215,7 +215,7 @@ interface Props {
   z: number;
 }
 function App(props: Props) {
-  const [isEnable, setIsEnable] = useState(false);
+  const [isEnable, setIsEnable] = useState(true);
 
   const [isCanvasLoaded, setIsCanvasLoaded] = useState(false);
 
