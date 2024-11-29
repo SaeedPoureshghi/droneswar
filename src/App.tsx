@@ -8,6 +8,7 @@ import * as THREE from "three";
 import { ImprovedNoise } from "three/examples/jsm/math/ImprovedNoise.js";
 import "./App.css";
 import DroneController from "./DroneController";
+import Logo from './assets/dron640x360.png'
 
 // import CrossHair from "./CrossHair";
 // import Gun from "./Gun";
@@ -214,7 +215,9 @@ interface Props {
   z: number;
 }
 function App(props: Props) {
-  const [isEnable, setIsEnable] = useState(true);
+  const [isEnable, setIsEnable] = useState(false);
+
+  const [isCanvasLoaded, setIsCanvasLoaded] = useState(false);
 
   // const buildingPositions = [
   //   new THREE.Vector3(0, 500, 0),
@@ -224,8 +227,15 @@ function App(props: Props) {
   // ];
 
   return (
-
+    <>
+    {!isCanvasLoaded && <div style={{display:"flex",flexDirection:"column", minHeight:"100vh", justifyContent:"center", alignItems:"center"}}>
+      <img src={Logo} alt="logo" style={{width:"320px", height:"auto"}}
+      
+      />
+      <h2>Loading...</h2>
+      </div>}
     <Canvas
+    onCreated={()=>setIsCanvasLoaded(true)}
     onClick={()=> {
       setIsEnable(!isEnable);
     }}
@@ -279,7 +289,7 @@ function App(props: Props) {
 
       </KeyboardControls>
     </Canvas>
-
+  </>
   );
 }
 
